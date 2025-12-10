@@ -1,0 +1,253 @@
+/**
+ * Bionic Privacy - Cookie Banner Styling
+ *
+ * @package     Bionic Privacy Plugin
+ * @copyright   Copyright (C) 2024 Bionic Technologies
+ * @license     GNU General Public License version 2 or later
+ */
+
+/* Overlay */
+.bionic-cookie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: bionicFadeIn 0.3s ease;
+}
+
+@keyframes bionicFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Modal Container */
+.bionic-cookie-modal {
+    background: white;
+    border: 4px solid #0066cc;
+    border-radius: 15px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    animation: bionicSlideDown 0.4s ease;
+    overflow: hidden;
+}
+
+@keyframes bionicSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Header */
+.bionic-cookie-header {
+    background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+    color: white;
+    padding: 25px 30px;
+}
+
+.bionic-cookie-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bionic-cookie-icon {
+    font-size: 28px;
+}
+
+/* Body */
+.bionic-cookie-body {
+    padding: 35px 40px;
+    text-align: center;
+}
+
+.bionic-cookie-message {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0 0 15px 0;
+}
+
+.bionic-cookie-link {
+    margin: 15px 0;
+}
+
+.bionic-cookie-link a {
+    color: #0066cc;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.bionic-cookie-link a:hover {
+    color: #004499;
+    border-bottom-color: #004499;
+}
+
+/* Details Section */
+.bionic-cookie-details {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.bionic-cookie-details-toggle {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0066cc;
+    transition: all 0.3s ease;
+}
+
+.bionic-cookie-details-toggle:hover {
+    background: #e9ecef;
+}
+
+.bionic-cookie-details-content {
+    margin-top: 10px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Footer / Buttons */
+.bionic-cookie-footer {
+    padding: 25px 40px 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.bionic-cookie-btn {
+    padding: 18px 45px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 180px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: inherit;
+}
+
+/* Accept Button */
+.bionic-cookie-btn-accept {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.bionic-cookie-btn-accept:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.6);
+}
+
+/* Decline Button */
+.bionic-cookie-btn-decline {
+    background: white;
+    color: #dc3545;
+    border: 3px solid #dc3545;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bionic-cookie-btn-decline:hover {
+    background: #f8f9fa;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bionic-cookie-modal {
+        max-width: 90%;
+    }
+    
+    .bionic-cookie-header {
+        padding: 20px 25px;
+    }
+    
+    .bionic-cookie-title {
+        font-size: 20px;
+    }
+    
+    .bionic-cookie-body {
+        padding: 25px 20px;
+    }
+    
+    .bionic-cookie-footer {
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .bionic-cookie-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .bionic-cookie-overlay {
+        padding: 15px;
+    }
+    
+    .bionic-cookie-modal {
+        max-width: 95%;
+        border-width: 3px;
+    }
+    
+    .bionic-cookie-header {
+        padding: 20px;
+    }
+    
+    .bionic-cookie-title {
+        font-size: 18px;
+    }
+    
+    .bionic-cookie-icon {
+        font-size: 20px;
+    }
+    
+    .bionic-cookie-body {
+        padding: 20px 15px;
+    }
+    
+    .bionic-cookie-message {
+        font-size: 14px;
+    }
+    
+    .bionic-cookie-btn {
+        padding: 16px 30px;
+        font-size: 14px;
+        min-width: auto;
+    }
+}
